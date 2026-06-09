@@ -6,1030 +6,257 @@
     <title>Locotech Summit 2026 • Le rendez-vous de la longévité locomotrice</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- GSAP CDN for premium animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Inter:wght@300;400;500;600&amp;display=swap');
         
-        :root {
-            --gold: #BFA46F; /* Refined quiet luxury gold */
-        }
+        body { font-family: 'Inter', system_ui, sans-serif; }
+        .heading-serif { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; }
         
-        body {
-            font-family: 'Inter', system_ui, sans-serif;
-        }
-        
-        .heading-serif {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-weight: 700;
-            letter-spacing: -0.025em;
-        }
-
-        .premium-gold {
-            color: #C5A26F;
-        }
-
-        .section-divider {
-            background: linear-gradient(to right, transparent, #C5A26F, transparent);
-            height: 1px;
-            opacity: 0.2;
-        }
-
-        .nav-scrolled {
-            background-color: rgba(9, 9, 11, 0.95);
-            backdrop-filter: blur(20px);
-        }
-
-        .hero-bg {
-            background: linear-gradient(rgba(9,9,11,0.65), rgba(9,9,11,0.75)), url('https://picsum.photos/id/1015/2000/1200');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .vitruvian-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 24px;
-            box-shadow: 0 25px 60px -15px rgb(0 0 0 / 0.5),
-                        0 0 0 1px rgba(197, 162, 111, 0.1);
-        }
-
-        /* Refined quiet luxury animations */
-        #rotating-ring, #planet-system {
-            animation: rotateRing 55s linear infinite;
-            transform-origin: 260px 260px;
-        }
-        
-        @keyframes rotateRing {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        @keyframes rotateRingReverse {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(-360deg); }
-        }
-
-        /* Infinity animations removed */
-
-        .vitruvian-container img {
-            transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
-            filter: contrast(1.05) saturate(0.95);
-        }
-        
-        .vitruvian-container:hover img {
-            transform: scale(1.015);
-        }
-
-        .luxury-shadow {
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 
-                        0 8px 10px -6px rgb(0 0 0 / 0.1);
-        }
-
-        .gold-border {
-            border-color: #C5A26F;
-        }
-
         .premium-card {
             transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-            border: 1px solid rgba(255,255,255,0.08);
         }
-        
         .premium-card:hover {
             transform: translateY(-6px);
             border-color: rgba(197, 162, 111, 0.25);
-            box-shadow: 0 30px 60px -15px rgb(0 0 0 / 0.5);
-        }
-
-        .nav-link {
-            position: relative;
-            transition: color 0.2s ease;
-        }
-        
-        .nav-link:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: -2px;
-            left: 0;
-            background-color: #C5A26F;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover:after {
-            width: 100%;
-        }
-
-        .stat-number {
-            font-variant-numeric: tabular-nums;
-        }
-
-        .modal {
-            animation: modalPop 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-
-        .hidden-access {
-            transition: all 0.3s ease;
-        }
-        
-        .hidden-access:hover {
-            color: #C5A26F;
-            transform: translateX(4px);
-        }
-
-        .luxury-gradient {
-            background: linear-gradient(135deg, #0a0a0b 0%, #111113 100%);
-        }
-
-        /* Animated Starry Background - Quiet Luxury */
-        .stars-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-            background: radial-gradient(circle at 50% 30%, rgba(20, 20, 30, 0.95) 0%, #0a0a0b 70%);
-        }
-
-        .star {
-            position: absolute;
-            background: white;
-            border-radius: 50%;
-            animation: twinkle 5.5s infinite alternate ease-in-out;
-            box-shadow: 0 0 4px rgba(255, 255, 255, 0.55);
-            opacity: 0.75;
-        }
-
-        @keyframes twinkle {
-            0% { opacity: 0.35; transform: scale(0.85); }
-            100% { opacity: 0.95; transform: scale(1.05); }
-        }
-
-        .star-gold {
-            background: #BFA46F;
-            box-shadow: 0 0 6px rgba(191, 164, 111, 0.65);
-            opacity: 0.9;
-        }
-
-        /* Parallax Effects - Quiet Luxury */
-        .parallax-layer {
-            transition: transform 0.1s ease-out;
-            will-change: transform;
-        }
-
-        .hero-parallax {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .parallax-bg {
-            position: absolute;
-            top: -20%;
-            left: -20%;
-            width: 140%;
-            height: 140%;
-            background: inherit;
-            background-size: cover;
-            transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
-        }
-
-        .section-parallax {
-            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-
-        /* Premium Glow Effect for Title */
-        .premium-glow {
-            text-shadow: 
-                0 0 10px rgba(191, 164, 111, 0.6),
-                0 0 20px rgba(191, 164, 111, 0.4),
-                0 0 40px rgba(197, 162, 111, 0.3),
-                0 0 80px rgba(197, 162, 111, 0.15);
-            animation: glowPulse 6s ease-in-out infinite alternate;
-        }
-
-        @keyframes glowPulse {
-            from { text-shadow: 
-                0 0 8px rgba(191, 164, 111, 0.5),
-                0 0 18px rgba(191, 164, 111, 0.35),
-                0 0 35px rgba(197, 162, 111, 0.25); }
-            to { text-shadow: 
-                0 0 15px rgba(191, 164, 111, 0.8),
-                0 0 30px rgba(191, 164, 111, 0.55),
-                0 0 55px rgba(197, 162, 111, 0.4),
-                0 0 90px rgba(197, 162, 111, 0.2); }
         }
     </style>
 </head>
-<body class="bg-zinc-950 text-white overflow-x-hidden">
-
-    <!-- Animated Starry Background -->
-    <div class="stars-bg" id="stars-bg"></div>
+<body class="bg-zinc-950 text-white">
 
     <!-- NAV -->
-    <nav id="nav" class="fixed top-0 left-0 right-0 z-50 border-b border-white/10 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-8">
-            <div class="flex items-center justify-between h-20">
-                <!-- Logo -->
-                <div class="flex items-center gap-x-3">
-                    <div class="w-9 h-9 rounded-full bg-gradient-to-br from-[#C5A26F] to-[#8B6F47] flex items-center justify-center">
-                        <span class="text-zinc-950 font-bold text-xl tracking-tighter">L²</span>
-                    </div>
-                    <div>
-                        <div class="font-semibold tracking-[-0.5px] text-xl">Locotech Summit 2026</div>
-                        <div class="text-[10px] text-white/50 -mt-1">LE RENDEZ-VOUS DE LA LONGÉVITÉ LOCOMOTRICE</div>
-                    </div>
-                </div>
-
-                <!-- Menu -->
-                <div class="hidden md:flex items-center gap-x-10 text-sm font-medium">
-                    <a href="#le-congres" class="nav-link text-white/80 hover:text-white">Le Congrès</a>
-                    <a href="#acces-particulier" class="nav-link text-white/80 hover:text-white">Accès Particulier</a>
-                    <a href="#programme" class="nav-link text-white/80 hover:text-white">Programme</a>
-                    <a href="#exposants" class="nav-link text-white/80 hover:text-white">15 Stands</a>
-                    <a href="#inscription" class="nav-link text-white/80 hover:text-white">Inscription</a>
-                </div>
-
-                <div class="flex items-center gap-x-4">
-                    <!-- Komo Pulse Hidden Access -->
-                    <button onclick="openKomoPulseModal()"
-                            class="hidden-access flex items-center gap-x-2 px-4 py-2 text-xs font-medium border border-white/20 hover:border-[#C5A26F] rounded-full text-white/70 hover:text-[#C5A26F] transition-all">
-                        <i class="fa-solid fa-heart-pulse mr-1.5"></i>
-                        <span>Komo Pulse</span>
-                    </button>
-
-                    <a href="#inscription" 
-                       class="px-6 py-2.5 bg-white text-zinc-950 text-sm font-semibold rounded-full hover:bg-[#C5A26F] hover:text-white transition-all flex items-center gap-x-2">
-                        <span>Réserver ma place</span>
-                    </a>
-                </div>
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/95 backdrop-blur-xl border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-8 flex items-center justify-between h-20">
+            <div class="flex items-center gap-x-3">
+                <div class="font-semibold tracking-tighter text-2xl">LOCOTECH</div>
+                <div class="text-xs text-white/40 tracking-[2px] mt-1">SUMMIT 2026</div>
+            </div>
+            
+            <div class="flex items-center gap-x-8 text-sm">
+                <a href="#programme" class="hover:text-[#C5A26F] transition">Programme</a>
+                <a href="#fondateurs" class="hover:text-[#C5A26F] transition">Fondateurs</a>
+                <a href="#exposants" class="hover:text-[#C5A26F] transition">15 Stands</a>
+                <a href="#inscription" class="px-6 py-2.5 bg-white text-zinc-950 text-sm font-semibold rounded-full hover:bg-[#C5A26F] hover:text-white transition">Réserver ma place</a>
             </div>
         </div>
     </nav>
 
-    <!-- HERO - Ultra Premium -->
-    <section class="hero-parallax min-h-[100dvh] flex items-center justify-center relative pt-20 overflow-hidden">
-        <div class="max-w-6xl mx-auto px-8 text-center relative z-10">
+    <!-- HERO -->
+    <section class="min-h-[100dvh] flex items-center justify-center pt-20 relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-8 text-center relative z-10">
             
-            <!-- Dynamic Integrated Vitruve - 5 Branches (Quiet Luxury SVG) -->
-            <div class="mx-auto mb-8 max-w-[620px] relative">
-                <svg id="vitruve-svg" width="520" height="520" viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg" class="mx-auto drop-shadow-2xl">
-                    <!-- Background -->
-                    <defs>
-                        <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#0a0a0b"/>
-                            <stop offset="100%" stop-color="#111113"/>
-                        </linearGradient>
-                        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                            <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="coloredBlur"/>
-                            <feMerge>
-                                <feMergeNode in="coloredBlur"/>
-                                <feMergeNode in="SourceGraphic"/>
-                            </feMerge>
-                        </filter>
-                    </defs>
+            <!-- Logo Haute Horlogerie -->
+            <div class="mx-auto mb-10 max-w-[520px] relative">
+                <svg width="520" height="520" viewBox="0 0 520 520" class="mx-auto drop-shadow-2xl">
+                    <!-- Cercles concentriques (style montre de luxe) -->
+                    <circle cx="260" cy="260" r="242" fill="none" stroke="#BFA46F" stroke-width="0.5" opacity="0.1"/>
+                    <circle cx="260" cy="260" r="235" fill="none" stroke="#BFA46F" stroke-width="0.7" opacity="0.15"/>
+                    <circle cx="260" cy="260" r="218" fill="none" stroke="#BFA46F" stroke-width="0.5" opacity="0.18"/>
+                    <circle cx="260" cy="260" r="200" fill="none" stroke="#BFA46F" stroke-width="0.6" opacity="0.22"/>
                     
-                    <!-- Outer dark circle -->
-                    <circle cx="260" cy="260" r="245" fill="url(#bgGrad)" stroke="#2a2a2e" stroke-width="2"/>
+                    <!-- 12 marqueurs d'heures -->
+                    <g transform="translate(260 32)"><line x1="0" y1="-9" x2="0" y2="0" stroke="#BFA46F" stroke-width="1.6" opacity="0.55"/></g>
+                    <g transform="translate(488 260)"><line x1="9" y1="0" x2="0" y2="0" stroke="#BFA46F" stroke-width="1.6" opacity="0.55"/></g>
+                    <g transform="translate(260 488)"><line x1="0" y1="9" x2="0" y2="0" stroke="#BFA46F" stroke-width="1.6" opacity="0.55"/></g>
+                    <g transform="translate(32 260)"><line x1="-9" y1="0" x2="0" y2="0" stroke="#BFA46F" stroke-width="1.6" opacity="0.55"/></g>
                     
-                    <!-- Outer rotating ring (dynamic) -->
-                    <g id="rotating-ring">
-                        <circle cx="260" cy="260" r="235" fill="none" stroke="#BFA46F" stroke-width="1.5" stroke-opacity="0.3"/>
-                        <!-- Dynamic rotating arrows -->
-                        <path d="M 260 25 Q 300 40 310 80" fill="none" stroke="#BFA46F" stroke-width="2.5" stroke-linecap="round"/>
-                        <path d="M 310 80 L 295 70 L 305 85" fill="none" stroke="#BFA46F" stroke-width="2.5" stroke-linecap="round"/>
-                        
-                        <path d="M 495 260 Q 480 300 440 310" fill="none" stroke="#BFA46F" stroke-width="2.5" stroke-linecap="round"/>
-                        <path d="M 440 310 L 450 295 L 435 305" fill="none" stroke="#BFA46F" stroke-width="2.5" stroke-linecap="round"/>
-                        
-                        <path d="M 260 495 Q 220 480 210 440" fill="none" stroke="#BFA46F" stroke-width="2.5" stroke-linecap="round"/>
-                        <path d="M 210 440 L 225 450 L 215 435" fill="none" stroke="#BFA46F" stroke-width="2.5" stroke-linecap="round"/>
-                        
-                        <path d="M 25 260 Q 40 220 80 210" fill="none" stroke="#BFA46F" stroke-width="2.5" stroke-linecap="round"/>
-                        <path d="M 80 210 L 70 225 L 85 215" fill="none" stroke="#BFA46F" stroke-width="2.5" stroke-linecap="round"/>
+                    <!-- Complication AGE -->
+                    <g transform="translate(385 195)">
+                        <circle cx="0" cy="0" r="28" fill="#0f0f12" stroke="#BFA46F" stroke-width="1.4" opacity="0.65"/>
+                        <text x="0" y="-8" text-anchor="middle" fill="#BFA46F" font-size="9" font-weight="600">AGE</text>
+                        <text x="0" y="12" text-anchor="middle" fill="#E5D5B8" font-size="18" font-weight="700">92</text>
                     </g>
-                    
-                    <!-- Mouvement de Haute Horlogerie - Refined Mechanical Movement -->
-                    <g id="planet-system">
-                        <!-- Central Balance Wheel / Rotor (Haute Horlogerie) -->
-                        <circle cx="260" cy="260" r="82" fill="#1a1a1f" stroke="#BFA46F" stroke-width="14"/>
-                        <!-- Inner balance highlight -->
-                        <circle cx="260" cy="260" r="68" fill="none" stroke="#E5D5B8" stroke-width="3" opacity="0.35"/>
-                        <!-- Subtle mechanical cross / bridge detail - discreet engraved -->
-                        <g opacity="0.28">
-                            <line x1="260" y1="190" x2="260" y2="330" stroke="#BFA46F" stroke-width="0.8"/>
-                            <line x1="190" y1="260" x2="330" y2="260" stroke="#BFA46F" stroke-width="0.8"/>
-                        </g>
-                        
-                        <!-- Multiple concentric rotating rings - Different speeds like complications -->
-                        <!-- Outer thin ring - slow elegant rotation (engraved subtlety) -->
-                        <ellipse cx="260" cy="260" rx="155" ry="48" fill="none" stroke="#BFA46F" stroke-width="1" stroke-opacity="0.45" transform="rotate(-8 260 260)"/>
-                        
-                        <!-- Middle ring - medium speed, opposite direction -->
-                        <ellipse cx="260" cy="260" rx="132" ry="38" fill="none" stroke="#BFA46F" stroke-width="0.75" stroke-opacity="0.35" transform="rotate(15 260 260)"/>
-                        
-                        <!-- Inner ring - faster, precise -->
-                        <ellipse cx="260" cy="260" rx="108" ry="32" fill="none" stroke="#BFA46F" stroke-width="0.65" stroke-opacity="0.3" transform="rotate(-22 260 260)"/>
-                        
-                        <!-- Very outer delicate ring -->
-                        <ellipse cx="260" cy="260" rx="172" ry="55" fill="none" stroke="#BFA46F" stroke-width="0.55" stroke-opacity="0.22" transform="rotate(5 260 260)"/>
-                        
-                        <!-- Luxury Watch Hour Markers (discreet, like high-end watches) -->
-                        <!-- 12 -->
-                        <g transform="translate(260 35)">
-                            <line x1="0" y1="-8" x2="0" y2="0" stroke="#BFA46F" stroke-width="1.4" opacity="0.45"/>
-                        </g>
-                        <!-- 3 -->
-                        <g transform="translate(485 260)">
-                            <line x1="8" y1="0" x2="0" y2="0" stroke="#BFA46F" stroke-width="1.4" opacity="0.45"/>
-                        </g>
-                        <!-- 6 -->
-                        <g transform="translate(260 485)">
-                            <line x1="0" y1="8" x2="0" y2="0" stroke="#BFA46F" stroke-width="1.4" opacity="0.45"/>
-                        </g>
-                        <!-- 9 -->
-                        <g transform="translate(35 260)">
-                            <line x1="-8" y1="0" x2="0" y2="0" stroke="#BFA46F" stroke-width="1.4" opacity="0.45"/>
-                        </g>
-                        
-                        <!-- Complication: Your Age (elegant sub-dial) - larger -->
-                        <g transform="translate(385 195)">
-                            <!-- Larger complication circle -->
-                            <circle cx="0" cy="0" r="28" fill="#0f0f12" stroke="#BFA46F" stroke-width="1.4" opacity="0.65"/>
-                            <!-- AGE label - bigger -->
-                            <text x="0" y="-8" text-anchor="middle" fill="#BFA46F" font-size="9" font-weight="600" letter-spacing="1.5" opacity="0.75">AGE</text>
-                            <!-- The number - bigger and more prominent -->
-                            <text x="0" y="12" text-anchor="middle" fill="#E5D5B8" font-size="18" font-weight="700">92</text>
-                        </g>
-                    </g>
-                    
-                    <!-- Planet core refined - no infinity -->
-                    
-                    <!-- Rotating orbit words - Independent elegant animations for higher design level -->
-                    <g id="longevity-orbit">
-                        <!-- LONGÉVITÉ - slower rotation -->
-                        <text id="word-longevite" x="260" y="48" text-anchor="middle" fill="#BFA46F" font-size="13" font-weight="600" letter-spacing="2" opacity="0.9" style="transform-origin: 260px 260px; animation: rotateRing 72s linear infinite;">LONGÉVITÉ</text>
-                        
-                        <!-- PRÉVENTION - different speed and direction -->
-                        <text id="word-prevention" x="380" y="95" text-anchor="middle" fill="#BFA46F" font-size="11.5" font-weight="500" letter-spacing="1" opacity="0.85" style="transform-origin: 260px 260px; animation: rotateRingReverse 48s linear infinite;">PRÉVENTION</text>
-                        
-                        <!-- MARCHER -->
-                        <text id="word-marcher" x="410" y="310" text-anchor="middle" fill="#BFA46F" font-size="11.5" font-weight="500" letter-spacing="1" opacity="0.85" style="transform-origin: 260px 260px; animation: rotateRing 61s linear infinite;">MARCHER</text>
-                        
-                        <!-- MOBILITÉ -->
-                        <text id="word-mobilite" x="140" y="310" text-anchor="middle" fill="#BFA46F" font-size="11.5" font-weight="500" letter-spacing="1" opacity="0.85" style="transform-origin: 260px 260px; animation: rotateRingReverse 53s linear infinite;">MOBILITÉ</text>
-                        
-                        <!-- INNOVATION -->
-                        <text id="word-innovation" x="125" y="155" text-anchor="middle" fill="#BFA46F" font-size="11.5" font-weight="500" letter-spacing="1" opacity="0.85" style="transform-origin: 260px 260px; animation: rotateRing 67s linear infinite;">INNOVATION</text>
-                    </g>
-                    
-                    <!-- Central refined planet core - no infinity symbols -->
                 </svg>
-                
-                <!-- Actor Labels - Outside the Orbit - Quiet Luxury Design -->
-                <!-- Top - Sociétés Savantes -->
-                <div class="absolute -top-3 left-1/2 -translate-x-1/2 flex flex-col items-center z-10">
-                    <div class="text-[#E5D5B8] text-[10px] tracking-[2.5px] font-medium">SOCIÉTÉS SAVANTES</div>
-                    <div class="w-px h-6 bg-gradient-to-b from-[#C5A26F] to-transparent mt-1"></div>
-                </div>
-                
-                <!-- Top Right - Entrepreneurs -->
-                <div class="absolute top-[18%] -right-2 flex flex-col items-end z-10">
-                    <div class="text-[#E5D5B8] text-[10px] tracking-[2px] font-medium text-right">ENTREPRENEURS</div>
-                    <div class="text-[#BFA46F] text-[8px] tracking-widest opacity-70">startups &amp; innovation</div>
-                    <div class="h-px w-8 bg-gradient-to-l from-[#C5A26F] to-transparent mt-1 self-end"></div>
-                </div>
-                
-                <!-- Bottom Right - Industriels -->
-                <div class="absolute bottom-[22%] -right-2 flex flex-col items-end z-10">
-                    <div class="text-[#E5D5B8] text-[10px] tracking-[2px] font-medium text-right">INDUSTRIELS</div>
-                    <div class="text-[#BFA46F] text-[8px] tracking-widest opacity-70">MedTech</div>
-                    <div class="h-px w-8 bg-gradient-to-l from-[#C5A26F] to-transparent mt-1 self-end"></div>
-                </div>
-                
-                <!-- Bottom Left - Médecins -->
-                <div class="absolute bottom-[22%] -left-2 flex flex-col items-start z-10">
-                    <div class="text-[#E5D5B8] text-[10px] tracking-[2px] font-medium">MÉDECINS</div>
-                    <div class="h-px w-8 bg-gradient-to-r from-[#C5A26F] to-transparent mt-1"></div>
-                </div>
-                
-                <!-- Top Left - Patients -->
-                <div class="absolute top-[18%] -left-2 flex flex-col items-start z-10">
-                    <div class="text-[#E5D5B8] text-[10px] tracking-[2px] font-medium">PATIENTS</div>
-                    <div class="h-px w-8 bg-gradient-to-r from-[#C5A26F] to-transparent mt-1"></div>
-                </div>
-                
-                <!-- Quiet Luxury badge -->
-                <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-zinc-950/90 backdrop-blur-xl px-6 py-2 rounded-2xl border border-white/10 flex items-center gap-x-3 shadow-2xl">
-                    <div class="flex items-center gap-x-2">
-                        <div class="w-1.5 h-1.5 bg-[#BFA46F] rounded-full animate-pulse"></div>
-                        <span class="text-[#BFA46F] text-xs font-medium tracking-[1.5px]">LE MOUVEMENT PERPÉTUEL • 5 ACTEURS EN ORBITE POUR LA LONGÉVITÉ</span>
-                    </div>
-                </div>
             </div>
 
-            <div class="max-w-[820px] mx-auto">
-                <!-- Top badge -->
-                <div class="inline-flex items-center gap-x-3 px-5 py-1.5 rounded-full bg-white/[0.035] border border-white/10 mb-8">
-                    <div class="flex items-center gap-x-2 text-xs tracking-[2.5px]">
-                        <span>10 &amp; 11 OCTOBRE 2026</span>
-                        <span class="w-px h-3 bg-white/20"></span>
-                        <span>ACADÉMIE NATIONALE DE CHIRURGIE</span>
-                    </div>
-                </div>
-
-                <h1 class="text-[68px] md:text-[86px] leading-[0.88] tracking-[-3.8px] font-bold heading-serif mb-6">
-                    LOCOTECH SUMMIT 2026
-                </h1>
-                
-                <!-- New glowing subtitle with premium glow -->
-                <div class="mb-8">
-                    <h2 class="text-4xl md:text-5xl font-light tracking-[-2px] text-white/90 premium-glow">
-                        LE MOUVEMENT PERPÉTUEL
-                    </h2>
-                    <div class="text-[#E5D5B8] text-xl md:text-2xl tracking-[1px] font-medium mt-2">
-                        5 ACTEURS EN ORBITE POUR LA LONGÉVITÉ
-                    </div>
-                </div>
-                
-                <p class="max-w-[46ch] mx-auto text-[21px] text-white/75 leading-tight mb-10">
-                    Une expérience rare, pensée pour 100 leaders<br>
-                    qui façonnent l’avenir de la longévité locomotrice.
-                </p>
-
-                <div class="text-[10px] tracking-[2px] text-white/40 mb-2">DANS LES SALLES HISTORIQUES DE L’ACADÉMIE NATIONALE DE CHIRURGIE</div>
-
-                <!-- Quiet Luxury bridge -->
-                <div class="max-w-md mx-auto text-xs text-white/50 tracking-wide mt-3">
-                    Un écosystème interconnecté pour une longévité perpétuelle.
-                </div>
-
-                <!-- Premium CTAs -->
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="#inscription" 
-                       class="group inline-flex items-center justify-center gap-x-3 px-14 py-[17px] bg-white hover:bg-[#C5A26F] active:bg-[#C5A26F] text-zinc-950 font-semibold text-[17px] rounded-2xl transition-all duration-200 w-full sm:w-auto shadow-xl">
-                        <span>Réserver ma place — 200 €</span>
-                        <i class="fa-solid fa-arrow-right-long group-hover:translate-x-0.5 transition"></i>
-                    </a>
-                    
-                    <a href="#le-congres" 
-                       class="inline-flex items-center justify-center gap-x-3 px-10 py-[17px] border border-white/25 hover:bg-white/5 hover:border-white/40 font-medium text-[15px] rounded-2xl transition-all w-full sm:w-auto">
-                        Découvrir le programme
-                    </a>
-                </div>
-                
-                <!-- No scarcity indicator as requested -->
-            </div>
-        </div>
-
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-60">
-            <div class="text-[9px] tracking-[4px] mb-1.5">SCROLL TO BEGIN</div>
-            <i class="fa-solid fa-chevron-down text-lg"></i>
-        </div>
-    </section>
-
-    <!-- LE CONGRÈS -->
-    <section id="le-congres" class="section-parallax max-w-5xl mx-auto px-8 py-24 border-t border-white/10">
-        <div class="grid md:grid-cols-12 gap-x-12 items-center">
-            <div class="md:col-span-7">
-                <div class="uppercase tracking-[3px] text-xs text-[#C5A26F] mb-3">ÉDITION 2026</div>
-                <h2 class="heading-serif text-6xl leading-none tracking-tighter mb-8">Un congrès<br>conçu pour<br>les échanges<br>qui comptent.</h2>
-                
-                <div class="prose prose-invert text-lg text-white/80 max-w-[42ch]">
-                    <p>Nous avons délibérément limité cette première édition à <strong class="text-white">100 participants</strong> pour créer un espace où chaque conversation a du sens, où les rencontres sont authentiques et où l’innovation naît vraiment du dialogue.</p>
-                </div>
-            </div>
+            <h1 class="text-7xl md:text-8xl font-bold tracking-[-4.5px] heading-serif mb-4">
+                LOCOTECH SUMMIT<br>2026
+            </h1>
+            <p class="text-3xl text-[#E5D5B8] tracking-tight">Le rendez-vous de la longévité locomotrice</p>
             
-            <div class="md:col-span-5 mt-12 md:mt-0">
-                <div class="bg-zinc-900/60 border border-white/10 rounded-3xl p-8">
-                    <div class="grid grid-cols-2 gap-8">
-                        <div>
-                            <div class="text-5xl font-semibold tabular-nums tracking-tighter">100</div>
-                            <div class="text-sm text-white/50 mt-1">Participants max</div>
-                        </div>
-                        <div>
-                            <div class="text-5xl font-semibold tabular-nums tracking-tighter">15</div>
-                            <div class="text-sm text-white/50 mt-1">Stands d’innovation</div>
-                        </div>
-                        <div>
-                            <div class="text-5xl font-semibold tabular-nums tracking-tighter">2</div>
-                            <div class="text-sm text-white/50 mt-1">Jours intenses</div>
-                        </div>
-                        <div>
-                            <div class="text-5xl font-semibold tabular-nums tracking-tighter">1</div>
-                            <div class="text-sm text-white/50 mt-1">Tarif unique</div>
-                        </div>
+            <div class="mt-10">
+                <a href="#inscription" class="inline-block px-10 py-4 bg-white text-zinc-950 font-semibold rounded-2xl text-lg hover:bg-[#C5A26F] hover:text-white transition">
+                    Réserver ma place — 200 €
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRAMME -->
+    <section id="programme" class="max-w-6xl mx-auto px-8 py-20">
+        <div class="text-center mb-14">
+            <div class="text-[#C5A26F] text-sm tracking-[3px]">10 &amp; 11 OCTOBRE 2026 • ACADÉMIE NATIONALE DE CHIRURGIE</div>
+            <h2 class="heading-serif text-6xl tracking-tighter mt-3">Le programme</h2>
+        </div>
+
+        <!-- Vendredi -->
+        <div class="mb-16">
+            <div class="flex items-center gap-x-4 mb-8">
+                <div class="flex-1 h-px bg-gradient-to-r from-transparent via-[#C5A26F]"></div>
+                <div class="text-center">
+                    <div class="text-[#C5A26F] text-sm tracking-[3px]">VENDREDI 10 OCTOBRE 2026</div>
+                    <div class="text-4xl font-semibold tracking-tight">Science, Innovation &amp; Intelligence</div>
+                </div>
+                <div class="flex-1 h-px bg-gradient-to-l from-transparent via-[#C5A26F]"></div>
+            </div>
+
+            <div class="space-y-6 text-lg max-w-4xl mx-auto">
+                <div class="flex gap-8"><div class="w-20 text-[#C5A26F] font-mono text-sm">08h30</div><div>Café d’ouverture</div></div>
+                <div class="flex gap-8"><div class="w-20 text-[#C5A26F] font-mono text-sm">09h30</div><div>Cérémonie d’ouverture — <span class="text-white/80">L’âge est une variable</span></div></div>
+                <div class="flex gap-8"><div class="w-20 text-[#C5A26F] font-mono text-sm">10h15</div><div>Keynote — <span class="font-medium">Le Capital Locomoteur</span> <span class="text-[#C5A26F]">(Dr Renan Chapon)</span></div></div>
+                <div class="flex gap-8"><div class="w-20 text-[#C5A26F] font-mono text-sm">11h15</div><div>Rachis &amp; Longévité • Esthétique régénérative • Innovation MedTech</div></div>
+                <div class="flex gap-8"><div class="w-20 text-[#C5A26F] font-mono text-sm">12h30</div><div>Pause déjeuner</div></div>
+                <div class="flex gap-8"><div class="w-20 text-[#C5A26F] font-mono text-sm">14h00</div><div>Sport &amp; Longévité Locomotrice</div></div>
+                <div class="flex gap-8"><div class="w-20 text-[#C5A26F] font-mono text-sm">15h30</div><div>Table ronde — <span class="text-[#C5A26F]">Dirigée par Thomas Josse</span></div></div>
+                <div class="flex gap-8"><div class="w-20 text-[#C5A26F] font-mono text-sm">16h30</div><div>Battle — <span class="text-[#C5A26F]">Dirigée par Thomas Josse</span></div></div>
+                <div class="flex gap-8"><div class="w-20 text-[#C5A26F] font-mono text-sm">17h30</div><div>Clôture scientifique du jour — <span class="text-[#C5A26F]">Dr Renan Chapon</span></div></div>
+                <div class="flex gap-8 pt-4 border-t border-white/10"><div class="w-20 text-[#C5A26F] font-mono text-sm">19h30</div><div class="font-medium">Charity Cocktail Auction + Soirée dansante</div></div>
+            </div>
+        </div>
+
+        <!-- Samedi -->
+        <div>
+            <div class="flex items-center gap-x-4 mb-8">
+                <div class="flex-1 h-px bg-gradient-to-r from-transparent via-[#C5A26F]"></div>
+                <div class="text-center">
+                    <div class="text-[#C5A26F] text-sm tracking-[3px]">SAMEDI 11 OCTOBRE 2026</div>
+                    <div class="text-4xl font-semibold tracking-tight">Médecine Régénérative &amp; Concours d’Excellence</div>
+                </div>
+                <div class="flex-1 h-px bg-gradient-to-l from-transparent via-[#C5A26F]"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-8">
+                <div>
+                    <div class="text-[#C5A26F] text-sm tracking-[2px] mb-4">MATINÉE — MÉDECINE RÉGÉNÉRATIVE (HAUT NIVEAU)</div>
+                    <div class="space-y-5 text-lg">
+                        <div class="flex gap-8"><div class="w-20 text-[#C5A26F] font-mono text-sm">09h00</div><div>Conférences d’excellence — Top experts internationaux</div></div>
+                        <div class="flex gap-8"><div class="w-20 text-[#C5A26F] font-mono text-sm">10h30</div><div>Pause didactique interactive</div></div>
+                        <div class="flex gap-8"><div class="w-20 text-[#C5A26F] font-mono text-sm">11h00</div><div>Session avancée — Régénération tissulaire, cellules souches</div></div>
+                        <div class="flex gap-8"><div class="w-20 text-[#C5A26F] font-mono text-sm">12h15</div><div>Pause déjeuner didactique</div></div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="text-[#C5A26F] text-sm tracking-[2px] mb-4">APRÈS-MIDI — JOUR DES CONCOURS</div>
+                    <div class="space-y-5 text-lg">
+                        <div class="flex gap-8"><div class="w-20 text-[#C5A26F] font-mono text-sm">14h00</div><div><span class="font-medium">Concours de Pitch Startups</span></div></div>
+                        <div class="flex gap-8"><div class="w-20 text-[#C5A26F] font-mono text-sm">15h30</div><div><span class="font-medium">Concours de Création &amp; Codage</span></div></div>
+                        <div class="flex gap-8 pt-4 border-t border-white/10"><div class="w-20 text-[#C5A26F] font-mono text-sm">17h00</div><div><span class="font-medium">Remise des prix &amp; Clôture officielle</span> — <span class="text-[#C5A26F]">LocoTech Innovation Trophy 2026</span></div></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ACCÈS PARTICULIER + SURPRISE -->
-    <section id="acces-particulier" class="bg-zinc-900 border-y border-white/10 py-20">
-        <div class="max-w-5xl mx-auto px-8">
-            <div class="max-w-2xl">
-                <div class="flex items-center gap-x-3 mb-4">
-                    <div class="h-px w-8 bg-[#C5A26F]"></div>
-                    <span class="uppercase tracking-[2.5px] text-xs text-[#C5A26F]">EXPÉRIENCE EXCLUSIVE</span>
-                </div>
-                <h2 class="heading-serif text-6xl tracking-tighter leading-none mb-6">Accès particulier.<br>Surprise à l’intérieur.</h2>
-                <p class="text-xl text-white/70">Dès votre inscription validée, vous activez un niveau d’accès supérieur. Et tout au long du congrès, une surprise exclusive vous attend — un moment que seuls les 100 participants vivront.</p>
-            </div>
-
-            <div class="mt-16 grid md:grid-cols-2 gap-6">
-                <!-- Accès Particulier -->
-                <div class="premium-card bg-zinc-950 border border-white/10 rounded-3xl p-9">
-                    <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-8">
-                        <i class="fa-solid fa-key text-3xl text-[#C5A26F]"></i>
-                    </div>
-                    <h3 class="text-3xl font-semibold tracking-tight mb-4">Accès Particulier<br>dès l’inscription</h3>
-                    <ul class="space-y-3 text-white/80">
-                        <li class="flex items-start gap-x-3"><i class="fa-solid fa-check mt-1.5 text-[#C5A26F]"></i> <span>Programme détaillé en avant-première</span></li>
-                        <li class="flex items-start gap-x-3"><i class="fa-solid fa-check mt-1.5 text-[#C5A26F]"></i> <span>Accès à la plateforme de networking ciblé</span></li>
-                        <li class="flex items-start gap-x-3"><i class="fa-solid fa-check mt-1.5 text-[#C5A26F]"></i> <span>Options de personnalisation avancées (table thématique, régime...)</span></li>
-                        <li class="flex items-start gap-x-3"><i class="fa-solid fa-check mt-1.5 text-[#C5A26F]"></i> <span>Priorité sur les ateliers et masterclasses</span></li>
-                    </ul>
-                </div>
-
-                <!-- Surprise -->
-                <div class="premium-card bg-zinc-950 border border-white/10 rounded-3xl p-9">
-                    <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-8">
-                        <i class="fa-solid fa-gift text-3xl text-[#C5A26F]"></i>
-                    </div>
-                    <h3 class="text-3xl font-semibold tracking-tight mb-4">Une surprise exclusive<br>à l’intérieur du congrès</h3>
-                    <p class="text-white/80 mb-6">Un moment inattendu, une rencontre ou une expérience sensorielle unique qui incarne l’esprit du L² Summit. La possibilité d’être surpris fait partie intégrante de l’aventure.</p>
-                    <div class="inline-flex items-center text-sm px-4 py-2 rounded-full border border-white/20 text-white/60">
-                        <i class="fa-solid fa-lock mr-2"></i> Réservé aux 100 participants
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- LES FONDATEURS (Section à remplir - Ultra Premium) -->
-    <section class="max-w-6xl mx-auto px-8 py-24 border-t border-white/10">
-        <div class="text-center mb-16">
-            <div class="uppercase tracking-[3.5px] text-xs text-[#C5A26F] mb-4">PORTÉS PAR UNE CONVICTION COMMUNE</div>
-            <h2 class="heading-serif text-7xl tracking-tighter">Les fondateurs</h2>
-            <p class="mt-5 max-w-lg mx-auto text-xl text-white/70">Deux parcours, une même vision : réinventer la longévité du mouvement à travers l’excellence interdisciplinaire et technologique.</p>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-8">
-            
-            <!-- Carte Renan -->
-            <div class="group premium-card bg-zinc-900/70 border border-white/10 hover:border-[#C5A26F]/30 rounded-3xl p-11 transition-all duration-500 flex flex-col">
-                <div class="flex items-start gap-x-6 mb-9">
-                    <div class="w-[92px] h-[92px] rounded-2xl overflow-hidden flex-shrink-0 ring-1 ring-white/10 relative">
-                        <img src="images/renan.jpg" alt="Dr Renan Chapon" class="w-full h-full object-cover">
-                    </div>
-                    <div class="pt-1">
-                        <div class="font-semibold text-[29px] tracking-[-0.6px] leading-none">Dr Renan Chapon</div>
-                        <div class="mt-2 text-[#C5A26F] text-sm tracking-[1px]">Président &amp; Fondateur • Médecin de la longévité locomotrice</div>
-                        <div class="mt-1 text-xs text-white/50">Ancien Président de l’AJCR</div>
-                    </div>
-                </div>
-                
-                <div class="flex-1 text-[15.2px] text-white/80 leading-relaxed">
-                    Médecin de la longévité locomotrice, le Dr Renan Chapon est un pionnier de l’approche préventive en médecine locomotrice. Ancien président de l’Association des Jeunes Chirurgiens du Rachis (AJCR), il a consacré sa carrière à l’analyse quantifiée de la marche et à l’intégration des principes de la médecine préventive japonaise.<br><br>
-                    Convaincu que la prévention doit devenir un véritable soin, il œuvre à fédérer tous les acteurs — médecins, sociétés savantes, industriels, startups et institutionnels — afin d’agir en amont des pathologies et d’éviter le recours à la chirurgie lorsque cela est possible. Pour lui, la longévité locomotrice passe par une collaboration transversale inédite.
-                </div>
-            </div>
-
-            <!-- Carte Thomas -->
-            <div class="group premium-card bg-zinc-900/70 border border-white/10 hover:border-[#C5A26F]/30 rounded-3xl p-11 transition-all duration-500 flex flex-col">
-                <div class="flex items-start gap-x-6 mb-9">
-                    <div class="w-[92px] h-[92px] rounded-2xl overflow-hidden flex-shrink-0 ring-1 ring-white/10 relative">
-                        <img src="images/thomas.jpg" alt="Thomas Josse" class="w-full h-full object-cover">
-                    </div>
-                    <div class="pt-1">
-                        <div class="font-semibold text-[29px] tracking-[-0.6px] leading-none">Thomas Josse</div>
-                        <div class="mt-2 text-[#C5A26F] text-sm tracking-[1px]">Co-fondateur • Fondateur de l’Agence Thomas Josse & du Club Privé</div>
-                        <div class="mt-1 text-xs text-white/50">Réseau de +800 praticiens en médecine & chirurgie esthétique</div>
-                    </div>
-                </div>
-                
-                <div class="flex-1 text-[15.2px] text-white/80 leading-relaxed">
-                    Fort de plus de 10 ans d’expérience, Thomas Josse est le fondateur de l’Agence Thomas Josse, pionnière dans la communication, le développement business et la mise en réseau des professionnels de la médecine et chirurgie esthétique en France.<br><br>
-                    À travers une conciergerie haut de gamme et un club privé réunissant plus de 800 praticiens (chirurgiens esthétiques, dermatologues, médecins régénératifs), il a construit l’un des réseaux les plus influents du secteur. Expert en stratégies de visibilité éthique et en mise en relation entre praticiens, industriels et innovateurs, il apporte au Locotech Summit son expertise unique en écosystème et en intelligence collective.
-                </div>
-            </div>
-
+    <!-- FONDATEURS -->
+    <section id="fondateurs" class="max-w-6xl mx-auto px-8 py-20 border-t border-white/10">
+        <div class="text-center mb-12">
+            <h2 class="heading-serif text-5xl tracking-tighter">Les fondateurs</h2>
         </div>
         
-        <div class="text-center mt-12">
-            <div class="inline text-xs tracking-[2px] text-white/40 border-b border-white/20 pb-px">UN COMITÉ SCIENTIFIQUE DE RÉFÉRENCE SERA PRÉSENTÉ PROCHAINEMENT</div>
-        </div>
-    </section>
-
-    <!-- PROGRAMME + 15 STANDS -->
-    <section id="programme" class="max-w-5xl mx-auto px-8 py-24">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-            <div>
-                <div class="uppercase tracking-[3px] text-xs text-[#C5A26F]">25 &amp; 26 SEPTEMBRE 2026</div>
-                <h2 class="heading-serif text-6xl tracking-tighter">Le programme</h2>
-            </div>
-            <a href="#inscription" class="mt-6 md:mt-0 text-sm flex items-center gap-x-2 group">
-                Voir le détail complet 
-                <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
-            </a>
-        </div>
-
         <div class="grid md:grid-cols-2 gap-8">
-            <!-- Jour 1 -->
-            <div class="border border-white/10 rounded-3xl p-9">
-                <div class="flex items-center justify-between mb-8">
+            <!-- Dr Renan Chapon -->
+            <div class="premium-card bg-zinc-900/70 border border-white/10 rounded-3xl p-10">
+                <div class="flex gap-6">
+                    <img src="images/renan.jpg" class="w-24 h-24 rounded-2xl object-cover" alt="Dr Renan Chapon">
                     <div>
-                        <div class="text-sm text-white/50">VENDREDI 10 OCTOBRE</div>
-                        <div class="text-3xl font-semibold">Journée Scientifique</div>
-                    </div>
-                    <div class="text-right">
-                        <div class="text-xs px-3 py-1 rounded bg-white/5 inline-block">08h30 → 19h30</div>
+                        <div class="font-semibold text-3xl">Dr Renan Chapon</div>
+                        <div class="text-[#C5A26F] text-sm tracking-wider mt-1">Président &amp; Fondateur • Médecin de la longévité locomotrice</div>
+                        <div class="text-xs text-white/50 mt-1">Ancien Président de l’AJCR</div>
                     </div>
                 </div>
-                <div class="space-y-6 text-sm">
-                    <div class="flex gap-4"><div class="w-20 text-white/50 shrink-0">08h30</div><div>Accueil &amp; café de bienvenue</div></div>
-                    <div class="flex gap-4"><div class="w-20 text-white/50 shrink-0">09h15</div><div>Ouverture officielle – Académie Nationale de Chirurgie</div></div>
-                    <div class="flex gap-4"><div class="w-20 text-white/50 shrink-0">09h45</div><div>Keynotes &amp; sessions plénières</div></div>
-                    <div class="flex gap-4"><div class="w-20 text-white/50 shrink-0">12h30</div><div>Ateliers déjeuner thématiques</div></div>
-                    <div class="flex gap-4"><div class="w-20 text-white/50 shrink-0">14h30</div><div>Sessions parallèles &amp; tables rondes</div></div>
-                    <div class="flex gap-4"><div class="w-20 text-white/50 shrink-0">19h30</div><div>Soirée caritative premium (option)</div></div>
+                <div class="mt-8 text-white/80 leading-relaxed">
+                    Médecin de la longévité locomotrice, pionnier de l’approche préventive. Ancien président de l’AJCR, il œuvre à fédérer tous les acteurs pour que la prévention devienne un véritable soin.
                 </div>
             </div>
 
-            <!-- Jour 2 -->
-            <div class="border border-white/10 rounded-3xl p-9">
-                <div class="flex items-center justify-between mb-8">
+            <!-- Thomas Josse -->
+            <div class="premium-card bg-zinc-900/70 border border-white/10 rounded-3xl p-10">
+                <div class="flex gap-6">
+                    <img src="images/thomas.jpg" class="w-24 h-24 rounded-2xl object-cover" alt="Thomas Josse">
                     <div>
-                        <div class="text-sm text-white/50">SAMEDI 11 OCTOBRE</div>
-                        <div class="text-3xl font-semibold">Masterclasses &amp; Innovation</div>
-                    </div>
-                    <div class="text-right">
-                        <div class="text-xs px-3 py-1 rounded bg-white/5 inline-block">08h30 → 18h00</div>
+                        <div class="font-semibold text-3xl">Thomas Josse</div>
+                        <div class="text-[#C5A26F] text-sm tracking-wider mt-1">Co-fondateur • Fondateur de l’Agence Thomas Josse</div>
+                        <div class="text-xs text-white/50 mt-1">Réseau de +800 praticiens</div>
                     </div>
                 </div>
-                <div class="space-y-6 text-sm">
-                    <div class="flex gap-4"><div class="w-20 text-white/50 shrink-0">08h30</div><div>Masterclasses interactives</div></div>
-                    <div class="flex gap-4"><div class="w-20 text-white/50 shrink-0">11h00</div><div>Table ronde institutionnelle</div></div>
-                    <div class="flex gap-4"><div class="w-20 text-white/50 shrink-0">14h00</div><div>LocoTech Innovation Trophy</div></div>
-                    <div class="flex gap-4"><div class="w-20 text-white/50 shrink-0">16h00</div><div>Networking final &amp; clôture</div></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 15 Stands - Quiet Luxury -->
-        <div id="exposants" class="mt-16 pt-16 border-t border-white/10">
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-y-4 mb-10">
-                <div>
-                    <div class="uppercase tracking-[3px] text-xs text-[#C5A26F] mb-1">ESPACE EXPOSITION</div>
-                    <h3 class="text-5xl font-semibold tracking-[-1.5px]">15 stands d’innovation</h3>
-                </div>
-                <div class="max-w-[380px]">
-                    <p class="text-white/70 text-[15px] leading-snug">
-                        La brochure partenaire sera bientôt disponible.<br>
-                        Découvrez les startups et industriels MedTech qui façonnent l’avenir de la longévité locomotrice.
-                    </p>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                <div class="group bg-zinc-900/60 hover:bg-zinc-900 border border-white/10 hover:border-[#C5A26F]/30 rounded-2xl p-6 text-sm transition-all flex items-center justify-center text-center">
-                    <span class="group-hover:text-[#C5A26F] transition-colors">La brochure partenaire sera bientôt disponible</span>
-                </div>
-                <div class="group bg-zinc-900/60 hover:bg-zinc-900 border border-white/10 hover:border-[#C5A26F]/30 rounded-2xl p-6 text-sm transition-all flex items-center justify-center text-center opacity-60">
-                    <span>Exposants sélectionnés prochainement</span>
-                </div>
-                <div class="group bg-zinc-900/60 hover:bg-zinc-900 border border-white/10 hover:border-[#C5A26F]/30 rounded-2xl p-6 text-sm transition-all flex items-center justify-center text-center opacity-60">
-                    <span>Exposants sélectionnés prochainement</span>
-                </div>
-                <div class="group bg-zinc-900/60 hover:bg-zinc-900 border border-white/10 hover:border-[#C5A26F]/30 rounded-2xl p-6 text-sm transition-all flex items-center justify-center text-center opacity-60">
-                    <span>Exposants sélectionnés prochainement</span>
-                </div>
-                <div class="group bg-zinc-900/60 hover:bg-zinc-900 border border-white/10 hover:border-[#C5A26F]/30 rounded-2xl p-6 text-sm transition-all flex items-center justify-center text-center opacity-60">
-                    <span>Exposants sélectionnés prochainement</span>
+                <div class="mt-8 text-white/80 leading-relaxed">
+                    Expert en stratégie et mise en réseau des professionnels de la médecine esthétique. Il apporte au Locotech Summit son expertise unique en écosystème et intelligence collective.
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- TARIF + INSCRIPTION - Ultra Premium -->
-    <section id="inscription" class="max-w-4xl mx-auto px-8 py-24 border-t border-white/10">
-        <div class="text-center mb-10">
-            <div class="inline-flex items-center gap-x-2 px-6 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs tracking-[2.5px]">
-                <span>TARIF UNIQUE</span> 
-                <span class="text-white/30">•</span> 
-                <span class="text-emerald-400">87 PLACES RESTANTES</span>
-            </div>
-            <h2 class="mt-8 heading-serif text-7xl tracking-[-1.5px] leading-none">Un seul tarif.<br>Une seule expérience.</h2>
-            <p class="mt-4 text-white/60 max-w-xs mx-auto">Tout est inclus. Rien n’est superflu.</p>
-        </div>
-
-        <div class="max-w-[420px] mx-auto">
-            <div class="premium-card border border-[#C5A26F]/40 bg-zinc-900/80 backdrop-blur-xl rounded-3xl p-11 text-center relative overflow-hidden">
-                
-                <!-- Subtle top accent -->
-                <div class="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#C5A26F] to-transparent"></div>
-                
-                <div>
-                    <div class="text-xs tracking-[3px] text-[#C5A26F]/90">TARIF PARTICIPANT PREMIUM</div>
-                    
-                    <div class="my-9">
-                        <span class="text-[92px] font-semibold tabular-nums tracking-[-5px] leading-none">200</span>
-                        <span class="text-4xl align-super font-light text-white/70">€</span>
-                    </div>
-                    
-                    <div class="text-[15px] text-white/75 mb-9 leading-tight">
-                        Accès complet aux 2 jours<br>
-                        + Espace 15 stands d’innovation<br>
-                        + Surprise exclusive à l’intérieur<br>
-                        + Accès Particulier activé dès l’inscription
-                    </div>
-                </div>
-
-                <a href="https://www.helloasso.com/associations/locotech-lab/evenements/l2-summit-2026" 
-                   target="_blank"
-                   class="group block w-full py-[18px] bg-white hover:bg-[#C5A26F] active:bg-[#C5A26F] text-zinc-950 font-semibold text-[17px] rounded-2xl transition-all mb-5 shadow-xl">
-                    <span class="group-hover:tracking-[0.3px] transition-all">RÉSERVER MA PLACE MAINTENANT</span>
-                </a>
-                
-                <div class="text-[10px] text-white/45 tracking-widest">100 PLACES • INSCRIPTION DÉFINITIVE APRÈS PAIEMENT</div>
-            </div>
-            
-            <div class="mt-5 text-center text-xs text-white/45">
-                Justificatifs acceptés pour internes &amp; étudiants • Soirée caritative disponible en option
-            </div>
-        </div>
-    </section>
-
-    <!-- FINAL CTA -->
-    <div class="border-t border-white/10 py-16 bg-zinc-900">
-        <div class="max-w-2xl mx-auto text-center px-8">
-            <p class="text-2xl tracking-tight">Prêt à vivre l’expérience la plus exclusive<br>du secteur de la longévité locomotrice ?</p>
-            
-            <a href="#inscription" 
-               class="mt-8 inline-block px-12 py-4 bg-[#C5A26F] hover:bg-white hover:text-zinc-950 text-white font-semibold rounded-2xl text-lg transition-all">
-                Je réserve ma place – 200 €
-            </a>
-        </div>
+    <!-- BACK OFFICE TRIGGER -->
+    <div class="text-center py-8">
+        <span onclick="openBackOffice()" class="text-xs text-white/20 hover:text-[#C5A26F] cursor-pointer tracking-[3px]">RIEN</span>
     </div>
 
-    <!-- FOOTER -->
-    <footer class="border-t border-white/10 py-12 text-xs text-white/50">
-        <div class="max-w-5xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-y-4">
-            <div>
-                © 2026 Association Locotech Lab • SIREN 993 257 989<br>
-                <span class="text-[10px]">Site officiel du L² Summit 2026 — l2summit.fr (à personnaliser)</span>
+    <!-- BACK OFFICE MODAL -->
+    <div id="backoffice-modal" onclick="if (event.target.id === 'backoffice-modal') closeBackOffice()" class="hidden fixed inset-0 bg-black/90 z-[200] flex items-center justify-center p-4">
+        <div onclick="event.stopImmediatePropagation()" class="bg-zinc-950 border border-white/10 rounded-3xl w-full max-w-4xl overflow-hidden">
+            <div class="p-8 border-b border-white/10 flex justify-between items-center">
+                <div>
+                    <div class="font-semibold text-2xl">Back Office</div>
+                    <div class="text-sm text-white/50">Locotech Summit 2026</div>
+                </div>
+                <button onclick="closeBackOffice()" class="text-3xl text-white/60 hover:text-white">×</button>
             </div>
             
-            <div class="flex items-center gap-x-6">
-                <a href="#" class="hover:text-white transition">Mentions légales</a>
-                <a href="#" class="hover:text-white transition">Confidentialité</a>
-                <button onclick="openKomoPulseModal()" class="hidden-access flex items-center gap-x-1.5 hover:text-[#C5A26F]">
-                    <i class="fa-solid fa-heart-pulse"></i>
-                    <span>Komo Pulse</span>
-                </button>
-            </div>
-        </div>
-    </footer>
-
-    <!-- KOMO PULSE MODAL - Ultra Exclusive Hidden Access -->
-    <div id="komo-modal" onclick="if (event.target.id === 'komo-modal') closeKomoPulseModal()" 
-         class="hidden fixed inset-0 bg-black/95 z-[100] flex items-center justify-center p-6 backdrop-blur-xl">
-        <div onclick="event.stopImmediatePropagation()" 
-             class="modal bg-zinc-950 border border-white/10 max-w-md w-full rounded-3xl overflow-hidden shadow-2xl">
-            
-            <!-- Header -->
-            <div class="px-10 pt-10 pb-8 border-b border-white/10">
-                <div class="flex items-start justify-between">
-                    <div class="flex items-center gap-x-4">
-                        <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#C5A26F]/90 to-[#8B6F47] flex items-center justify-center">
-                            <i class="fa-solid fa-heart-pulse text-white text-3xl"></i>
-                        </div>
-                        <div>
-                            <div class="font-semibold text-[27px] tracking-[-0.5px]">Komo Pulse</div>
-                            <div class="text-[10px] text-[#C5A26F] tracking-[3px] -mt-1">ACCÈS RÉSERVÉ • CONFIDENTIEL</div>
-                        </div>
-                    </div>
-                    <button onclick="closeKomoPulseModal()" 
-                            class="text-white/30 hover:text-white text-4xl leading-none mt-1 transition">×</button>
+            <div class="p-8">
+                <div id="bo-password">
+                    <p class="text-center mb-6 text-white/70">Entrez le code d’accès</p>
+                    <input id="bo-code" type="password" class="w-full bg-zinc-900 border border-white/20 rounded-2xl px-6 py-4 text-center text-3xl tracking-[10px]" placeholder="••••">
+                    <button onclick="checkBackOfficeCode()" class="mt-6 w-full bg-white text-black py-4 rounded-2xl font-semibold">Accéder</button>
                 </div>
-            </div>
-
-            <div class="px-10 py-9">
-                <p class="text-white/75 leading-relaxed text-[15px]">
-                    Plateforme propriétaire de Locotech Lab.<br>
-                    Suivi en temps réel de la qualité du mouvement, des marqueurs de longévité locomotrice et des données biomécaniques personnalisées.
-                </p>
                 
-                <div class="mt-8 p-6 rounded-2xl bg-black/60 border border-white/10 text-sm">
-                    <div class="flex items-center gap-x-2 text-[#C5A26F] mb-3">
-                        <i class="fa-solid fa-lock"></i>
-                        <span class="font-medium text-xs tracking-widest">ACCÈS STRICTEMENT LIMITÉ</span>
-                    </div>
-                    <div class="text-white/70 text-[13px]">
-                        Réservé aux participants du L² Summit 2026 et aux membres du cercle Locotech Lab.
-                    </div>
-                </div>
-            </div>
-
-            <!-- Access form -->
-            <div class="bg-zinc-900 px-10 py-8 border-t border-white/10">
-                <div class="text-[10px] text-white/40 tracking-[1.5px] mb-2">CODE D’ACCÈS PERSONNEL</div>
-                
-                <div class="flex gap-3">
-                    <input id="komo-code" type="text" value="KOMO2026" 
-                           class="flex-1 bg-zinc-950 border border-white/20 focus:border-[#C5A26F] text-sm py-3.5 px-5 rounded-2xl font-mono tracking-widest outline-none">
+                <div id="bo-content" class="hidden">
+                    <div class="text-green-400 text-sm mb-6">Accès autorisé • Code 2026</div>
                     
-                    <button onclick="unlockKomoPulse()" 
-                            class="px-9 bg-white hover:bg-[#C5A26F] active:bg-[#C5A26F] text-zinc-950 font-semibold text-sm rounded-2xl transition-all whitespace-nowrap">
-                        DÉVERROUILLER
-                    </button>
-                </div>
-                
-                <div class="text-center mt-4">
-                    <div id="komo-unlocked" class="hidden text-emerald-400 text-xs font-medium tracking-wider">
-                        ✓ ACCÈS ACTIVÉ — Bienvenue dans Komo Pulse
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="bg-zinc-900 p-5 rounded-2xl">Programme<br><span class="text-xs text-white/50">(Éditable bientôt)</span></div>
+                        <div class="bg-zinc-900 p-5 rounded-2xl">Fondateurs<br><span class="text-xs text-white/50">(Éditable bientôt)</span></div>
+                        <div class="bg-zinc-900 p-5 rounded-2xl">15 Stands<br><span class="text-xs text-white/50">(Éditable bientôt)</span></div>
                     </div>
+                    
+                    <p class="text-center text-xs text-white/40 mt-8">Version démo • Les modifications seront sauvegardées dans une version future.</p>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        // Tailwind script
-        function initializeTailwind() {
-            document.documentElement.style.setProperty('--accent-gold', '#C5A26F');
-        }
-
-        // Navbar scroll effect
-        function initNavbar() {
-            const nav = document.getElementById('nav');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    nav.classList.add('nav-scrolled', 'shadow-xl');
-                } else {
-                    nav.classList.remove('nav-scrolled', 'shadow-xl');
-                }
-            });
-        }
-
-        // Komo Pulse Modal
-        let komoModal = null;
-        
-        function openKomoPulseModal() {
-            komoModal = document.getElementById('komo-modal');
-            komoModal.classList.remove('hidden');
-            komoModal.classList.add('flex');
-            
-            // Reset unlock state
-            document.getElementById('komo-unlocked').classList.add('hidden');
+        function openBackOffice() {
+            document.getElementById('backoffice-modal').classList.remove('hidden');
+            document.getElementById('bo-password').classList.remove('hidden');
+            document.getElementById('bo-content').classList.add('hidden');
         }
         
-        function closeKomoPulseModal() {
-            if (komoModal) {
-                komoModal.classList.remove('flex');
-                komoModal.classList.add('hidden');
-            }
+        function closeBackOffice() {
+            document.getElementById('backoffice-modal').classList.add('hidden');
         }
         
-        function unlockKomoPulse() {
-            const codeInput = document.getElementById('komo-code').value.trim();
-            const unlockedDiv = document.getElementById('komo-unlocked');
-            
-            if (codeInput.toUpperCase() === 'KOMO2026' || codeInput === '') {
-                unlockedDiv.classList.remove('hidden');
-                setTimeout(() => {
-                    // Optional: close modal after success or keep it
-                }, 2200);
+        function checkBackOfficeCode() {
+            const code = document.getElementById('bo-code').value;
+            if (code === "2026") {
+                document.getElementById('bo-password').classList.add('hidden');
+                document.getElementById('bo-content').classList.remove('hidden');
             } else {
-                alert("Code incorrect. Essayez KOMO2026 pour la démo.");
+                alert("Code incorrect");
             }
         }
-
-        // Smooth scroll for anchor links
-        function initSmoothScroll() {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        e.preventDefault();
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                });
-            });
-        }
-
-        // Keyboard escape for modal
-        function initKeyboardControls() {
-            document.addEventListener('keydown', function(e) {
-
-        // Parallax Effects - Quiet Luxury
-        function initParallax() {
-            const hero = document.querySelector('.hero-parallax');
-            const layers = document.querySelectorAll('.parallax-layer');
-
-            if (!hero) return;
-
-            window.addEventListener('scroll', () => {
-                const scrollY = window.scrollY;
-                
-                // Hero subtle parallax
-                if (hero) {
-                    const heroOffset = scrollY * 0.15;
-                    hero.style.transform = `translateY(${heroOffset}px)`;
-                }
-
-                // Multiple layers parallax
-                layers.forEach((layer, index) => {
-                    const speed = 0.08 + (index * 0.03);
-                    const yPos = scrollY * speed;
-                    layer.style.transform = `translateY(${yPos}px)`;
-                });
-            });
-        }
-                if (e.key === "Escape") {
-                    const modal = document.getElementById('komo-modal');
-                    if (!modal.classList.contains('hidden')) {
-                        modal.classList.remove('flex');
-                        modal.classList.add('hidden');
-                    }
-                }
-            });
-        }
-
-        // Live places counter (premium scarcity effect)
-        function initPlacesCounter() {
-            const el = document.getElementById('places-left');
-            if (!el) return;
-            
-            let current = 87;
-            el.textContent = current;
-            
-            // Subtle random fluctuation every 45 seconds (demo only)
-            setInterval(() => {
-                if (current > 72 && Math.random() > 0.7) {
-                    current--;
-                    el.style.transition = 'all 0.6s cubic-bezier(0.23,1,0.32,1)';
-                    el.textContent = current;
-                }
-            }, 45000);
-        }
-
-        // Animated Starry Background - Refined Quiet Luxury Intensity
-        function createStarryBackground() {
-            const container = document.getElementById('stars-bg');
-            if (!container) return;
-            
-            // Reduced intensity for quiet luxury (more subtle & elegant)
-            const numStars = 95;
-            
-            for (let i = 0; i < numStars; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                
-                const size = Math.random() * 2 + 0.6;
-                star.style.width = `${size}px`;
-                star.style.height = `${size}px`;
-                
-                star.style.left = `${Math.random() * 100}%`;
-                star.style.top = `${Math.random() * 100}%`;
-                
-                // Slower, more meditative animation
-                star.style.animationDuration = `${3.5 + Math.random() * 4}s`;
-                star.style.animationDelay = `-${Math.random() * 6}s`;
-                
-                // Fewer golden stars, more discretion
-                if (Math.random() > 0.92) {
-                    star.classList.add('star-gold');
-                }
-                
-                // Vary opacity
-                star.style.opacity = Math.random() * 0.7 + 0.3;
-                
-                container.appendChild(star);
+        
+        // Secret keyboard access (type "rien")
+        let keys = [];
+        document.addEventListener('keydown', function(e) {
+            keys.push(e.key.toLowerCase());
+            if (keys.length > 4) keys.shift();
+            if (keys.join('') === 'rien') {
+                openBackOffice();
+                keys = [];
             }
-        }
-
-// Initialize everything
-        function init() {
-            initializeTailwind();
-            initNavbar();
-            initSmoothScroll();
-            initKeyboardControls();
-            initPlacesCounter();
-            
-            // Subtle entrance animation for Vitruvian
-            const vitruvian = document.querySelector('.vitruvian-container img');
-            if (vitruvian) {
-                vitruvian.style.opacity = '0.98';
-            }
-            
-            console.log('%c[L² Summit 2026] Version Ultra-Premium livrée. Prêt à dominer.', 'color:#C5A26F');
-        }
-
-        window.onload = init;
+        });
     </script>
+
 </body>
 </html>

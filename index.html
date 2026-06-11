@@ -70,8 +70,6 @@
             to { transform: rotate(-360deg); }
         }
 
-        /* Infinity animations removed */
-
         .vitruvian-container img {
             transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
             filter: contrast(1.05) saturate(0.95);
@@ -398,14 +396,14 @@
                 <!-- Top Right - Entrepreneurs -->
                 <div class="absolute top-[18%] -right-2 flex flex-col items-end z-10">
                     <div class="text-[#E5D5B8] text-[10px] tracking-[2px] font-medium text-right">ENTREPRENEURS</div>
-                    <div class="text-[#BFA46F] text-[8px] tracking-widest opacity-70">startups &amp; innovation</div>
+                    <div class="text-[#BFA46F] text-[8px] tracking-widest opacity="70">startups &amp; innovation</div>
                     <div class="h-px w-8 bg-gradient-to-l from-[#C5A26F] to-transparent mt-1 self-end"></div>
                 </div>
                 
                 <!-- Bottom Right - Industriels -->
                 <div class="absolute bottom-[22%] -right-2 flex flex-col items-end z-10">
                     <div class="text-[#E5D5B8] text-[10px] tracking-[2px] font-medium text-right">INDUSTRIELS</div>
-                    <div class="text-[#BFA46F] text-[8px] tracking-widest opacity-70">MedTech</div>
+                    <div class="text-[#BFA46F] text-[8px] tracking-widest opacity="70">MedTech</div>
                     <div class="h-px w-8 bg-gradient-to-l from-[#C5A26F] to-transparent mt-1 self-end"></div>
                 </div>
                 
@@ -459,6 +457,12 @@
                     qui façonnent l’avenir de la longévité locomotrice.
                 </p>
 
+                <!-- Badge Komo Pulse ajouté -->
+                <div class="inline-flex items-center gap-x-2 px-5 py-2 rounded-full bg-white/5 border border-white/10 text-sm mb-8">
+                    <span class="text-[#C5A26F]">★</span> 
+                    <span>Accès Particulier <strong>Komo Pulse</strong> activé dès l’inscription</span>
+                </div>
+
                 <div class="text-[10px] tracking-[2px] text-white/40 mb-2">DANS LES SALLES HISTORIQUES DE L’ACADÉMIE NATIONALE DE CHIRURGIE</div>
 
                 <!-- Quiet Luxury bridge -->
@@ -468,7 +472,8 @@
 
                 <!-- Premium CTAs -->
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="#inscription" 
+                    <a href="https://www.helloasso.com/associations/association-locotech-lab/evenements/locomotor-longevity-summit-2026" 
+                       target="_blank"
                        class="group inline-flex items-center justify-center gap-x-3 px-14 py-[17px] bg-white hover:bg-[#C5A26F] active:bg-[#C5A26F] text-zinc-950 font-semibold text-[17px] rounded-2xl transition-all duration-200 w-full sm:w-auto shadow-xl">
                         <span>Réserver ma place — 200 €</span>
                         <i class="fa-solid fa-arrow-right-long group-hover:translate-x-0.5 transition"></i>
@@ -480,7 +485,6 @@
                     </a>
                 </div>
                 
-                <!-- No scarcity indicator as requested -->
             </div>
         </div>
 
@@ -569,7 +573,7 @@
         </div>
     </section>
 
-    <!-- LES FONDATEURS (Section à remplir - Ultra Premium) -->
+    <!-- LES FONDATEURS -->
     <section class="max-w-6xl mx-auto px-8 py-24 border-t border-white/10">
         <div class="text-center mb-16">
             <div class="uppercase tracking-[3.5px] text-xs text-[#C5A26F] mb-4">PORTÉS PAR UNE CONVICTION COMMUNE</div>
@@ -748,7 +752,7 @@
                     </div>
                 </div>
 
-                <a href="https://www.helloasso.com/associations/locotech-lab/evenements/l2-summit-2026" 
+                <a href="https://www.helloasso.com/associations/association-locotech-lab/evenements/locomotor-longevity-summit-2026" 
                    target="_blank"
                    class="group block w-full py-[18px] bg-white hover:bg-[#C5A26F] active:bg-[#C5A26F] text-zinc-950 font-semibold text-[17px] rounded-2xl transition-all mb-5 shadow-xl">
                     <span class="group-hover:tracking-[0.3px] transition-all">RÉSERVER MA PLACE MAINTENANT</span>
@@ -780,7 +784,7 @@
         <div class="max-w-5xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-y-4">
             <div>
                 © 2026 Association Locotech Lab • SIREN 993 257 989<br>
-                <span class="text-[10px]">Site officiel du L² Summit 2026 — l2summit.fr (à personnaliser)</span>
+                <span class="text-[10px]">Site officiel du L² Summit 2026</span>
             </div>
             
             <div class="flex items-center gap-x-6">
@@ -794,13 +798,12 @@
         </div>
     </footer>
 
-    <!-- KOMO PULSE MODAL - Ultra Exclusive Hidden Access -->
+    <!-- KOMO PULSE MODAL -->
     <div id="komo-modal" onclick="if (event.target.id === 'komo-modal') closeKomoPulseModal()" 
          class="hidden fixed inset-0 bg-black/95 z-[100] flex items-center justify-center p-6 backdrop-blur-xl">
         <div onclick="event.stopImmediatePropagation()" 
              class="modal bg-zinc-950 border border-white/10 max-w-md w-full rounded-3xl overflow-hidden shadow-2xl">
             
-            <!-- Header -->
             <div class="px-10 pt-10 pb-8 border-b border-white/10">
                 <div class="flex items-start justify-between">
                     <div class="flex items-center gap-x-4">
@@ -834,7 +837,6 @@
                 </div>
             </div>
 
-            <!-- Access form -->
             <div class="bg-zinc-900 px-10 py-8 border-t border-white/10">
                 <div class="text-[10px] text-white/40 tracking-[1.5px] mb-2">CODE D’ACCÈS PERSONNEL</div>
                 
@@ -858,12 +860,10 @@
     </div>
 
     <script>
-        // Tailwind script
         function initializeTailwind() {
             document.documentElement.style.setProperty('--accent-gold', '#C5A26F');
         }
 
-        // Navbar scroll effect
         function initNavbar() {
             const nav = document.getElementById('nav');
             window.addEventListener('scroll', () => {
@@ -875,40 +875,6 @@
             });
         }
 
-        // Komo Pulse Modal
-        let komoModal = null;
-        
-        function openKomoPulseModal() {
-            komoModal = document.getElementById('komo-modal');
-            komoModal.classList.remove('hidden');
-            komoModal.classList.add('flex');
-            
-            // Reset unlock state
-            document.getElementById('komo-unlocked').classList.add('hidden');
-        }
-        
-        function closeKomoPulseModal() {
-            if (komoModal) {
-                komoModal.classList.remove('flex');
-                komoModal.classList.add('hidden');
-            }
-        }
-        
-        function unlockKomoPulse() {
-            const codeInput = document.getElementById('komo-code').value.trim();
-            const unlockedDiv = document.getElementById('komo-unlocked');
-            
-            if (codeInput.toUpperCase() === 'KOMO2026' || codeInput === '') {
-                unlockedDiv.classList.remove('hidden');
-                setTimeout(() => {
-                    // Optional: close modal after success or keep it
-                }, 2200);
-            } else {
-                alert("Code incorrect. Essayez KOMO2026 pour la démo.");
-            }
-        }
-
-        // Smooth scroll for anchor links
         function initSmoothScroll() {
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
@@ -921,34 +887,8 @@
             });
         }
 
-        // Keyboard escape for modal
         function initKeyboardControls() {
             document.addEventListener('keydown', function(e) {
-
-        // Parallax Effects - Quiet Luxury
-        function initParallax() {
-            const hero = document.querySelector('.hero-parallax');
-            const layers = document.querySelectorAll('.parallax-layer');
-
-            if (!hero) return;
-
-            window.addEventListener('scroll', () => {
-                const scrollY = window.scrollY;
-                
-                // Hero subtle parallax
-                if (hero) {
-                    const heroOffset = scrollY * 0.15;
-                    hero.style.transform = `translateY(${heroOffset}px)`;
-                }
-
-                // Multiple layers parallax
-                layers.forEach((layer, index) => {
-                    const speed = 0.08 + (index * 0.03);
-                    const yPos = scrollY * speed;
-                    layer.style.transform = `translateY(${yPos}px)`;
-                });
-            });
-        }
                 if (e.key === "Escape") {
                     const modal = document.getElementById('komo-modal');
                     if (!modal.classList.contains('hidden')) {
@@ -959,7 +899,6 @@
             });
         }
 
-        // Live places counter (premium scarcity effect)
         function initPlacesCounter() {
             const el = document.getElementById('places-left');
             if (!el) return;
@@ -967,7 +906,6 @@
             let current = 87;
             el.textContent = current;
             
-            // Subtle random fluctuation every 45 seconds (demo only)
             setInterval(() => {
                 if (current > 72 && Math.random() > 0.7) {
                     current--;
@@ -977,12 +915,10 @@
             }, 45000);
         }
 
-        // Animated Starry Background - Refined Quiet Luxury Intensity
         function createStarryBackground() {
             const container = document.getElementById('stars-bg');
             if (!container) return;
             
-            // Reduced intensity for quiet luxury (more subtle & elegant)
             const numStars = 95;
             
             for (let i = 0; i < numStars; i++) {
@@ -996,40 +932,56 @@
                 star.style.left = `${Math.random() * 100}%`;
                 star.style.top = `${Math.random() * 100}%`;
                 
-                // Slower, more meditative animation
                 star.style.animationDuration = `${3.5 + Math.random() * 4}s`;
                 star.style.animationDelay = `-${Math.random() * 6}s`;
                 
-                // Fewer golden stars, more discretion
                 if (Math.random() > 0.92) {
                     star.classList.add('star-gold');
                 }
                 
-                // Vary opacity
                 star.style.opacity = Math.random() * 0.7 + 0.3;
                 
                 container.appendChild(star);
             }
         }
 
-// Initialize everything
         function init() {
             initializeTailwind();
             initNavbar();
             initSmoothScroll();
             initKeyboardControls();
             initPlacesCounter();
+            createStarryBackground();
             
-            // Subtle entrance animation for Vitruvian
-            const vitruvian = document.querySelector('.vitruvian-container img');
-            if (vitruvian) {
-                vitruvian.style.opacity = '0.98';
-            }
-            
-            console.log('%c[L² Summit 2026] Version Ultra-Premium livrée. Prêt à dominer.', 'color:#C5A26F');
+            console.log('%c[L² Summit 2026] Version mise à jour avec HelloAsso + Komo Pulse.', 'color:#C5A26F');
         }
 
         window.onload = init;
+
+        // Komo Pulse Modal functions
+        function openKomoPulseModal() {
+            const modal = document.getElementById('komo-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.getElementById('komo-unlocked').classList.add('hidden');
+        }
+        
+        function closeKomoPulseModal() {
+            const modal = document.getElementById('komo-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+        
+        function unlockKomoPulse() {
+            const codeInput = document.getElementById('komo-code').value.trim();
+            const unlockedDiv = document.getElementById('komo-unlocked');
+            
+            if (codeInput.toUpperCase() === 'KOMO2026' || codeInput === '') {
+                unlockedDiv.classList.remove('hidden');
+            } else {
+                alert("Code incorrect. Essayez KOMO2026 pour la démo.");
+            }
+        }
     </script>
 </body>
 </html>

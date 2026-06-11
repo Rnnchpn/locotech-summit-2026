@@ -241,7 +241,7 @@
                     </div>
                 </div>
 
-                <!-- Menu -->
+                <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center gap-x-10 text-sm font-medium">
                     <a href="#le-congres" class="nav-link text-white/80 hover:text-white">Le Congrès</a>
                     <a href="#acces-particulier" class="nav-link text-white/80 hover:text-white">Accès Particulier</a>
@@ -251,6 +251,13 @@
                 </div>
 
                 <div class="flex items-center gap-x-4">
+                    <!-- Mobile Hamburger - Ultra Premium -->
+                    <button id="mobile-menu-btn" 
+                            class="md:hidden flex items-center justify-center w-11 h-11 text-white/80 hover:text-white transition-all rounded-full hover:bg-white/5 active:bg-white/10"
+                            aria-label="Menu de navigation">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+
                     <!-- Komo Pulse Hidden Access -->
                     <button onclick="openKomoPulseModal()"
                             class="hidden-access flex items-center gap-x-2 px-4 py-2 text-xs font-medium border border-white/20 hover:border-[#C5A26F] rounded-full text-white/70 hover:text-[#C5A26F] transition-all">
@@ -266,6 +273,31 @@
             </div>
         </div>
     </nav>
+
+    <!-- Mobile Menu Overlay - Quiet Luxury Full Experience -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-zinc-950/98 z-[60] pt-20 px-8 backdrop-blur-2xl">
+        <div class="flex flex-col gap-y-6 text-[18px] font-medium pt-6">
+            <a href="#le-congres" class="text-white/90 hover:text-[#C5A26F] transition-colors py-2 border-b border-white/10">Le Congrès</a>
+            <a href="#acces-particulier" class="text-white/90 hover:text-[#C5A26F] transition-colors py-2 border-b border-white/10">Accès Particulier</a>
+            <a href="#programme" class="text-white/90 hover:text-[#C5A26F] transition-colors py-2 border-b border-white/10">Programme</a>
+            <a href="#exposants" class="text-white/90 hover:text-[#C5A26F] transition-colors py-2 border-b border-white/10">15 Stands d’innovation</a>
+            <a href="#inscription" class="text-white/90 hover:text-[#C5A26F] transition-colors py-2 border-b border-white/10">Inscription</a>
+
+            <div class="pt-8 flex flex-col gap-y-4">
+                <button onclick="openKomoPulseModal(); document.getElementById('mobile-menu').classList.add('hidden'); document.getElementById('mobile-menu').classList.remove('flex');" 
+                        class="flex items-center justify-center gap-x-3 py-3 text-white/80 hover:text-[#C5A26F] border border-white/20 rounded-2xl transition-all active:bg-white/5">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                    <span>Accéder à Komo Pulse</span>
+                </button>
+                
+                <a href="#inscription" 
+                   onclick="document.getElementById('mobile-menu').classList.add('hidden'); document.getElementById('mobile-menu').classList.remove('flex');"
+                   class="mt-1 inline-flex items-center justify-center px-10 py-4 bg-white text-zinc-950 font-semibold rounded-2xl text-[15px] hover:bg-[#C5A26F] hover:text-white active:bg-[#C5A26F] transition-all shadow-xl">
+                    Réserver ma place — 200 €
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- HERO - Ultra Premium -->
     <section class="hero-parallax min-h-[100dvh] flex items-center justify-center relative pt-20 overflow-hidden">
@@ -396,14 +428,14 @@
                 <!-- Top Right - Entrepreneurs -->
                 <div class="absolute top-[18%] -right-2 flex flex-col items-end z-10">
                     <div class="text-[#E5D5B8] text-[10px] tracking-[2px] font-medium text-right">ENTREPRENEURS</div>
-                    <div class="text-[#BFA46F] text-[8px] tracking-widest opacity="70">startups &amp; innovation</div>
+                    <div class="text-[#BFA46F] text-[8px] tracking-widest opacity-70">startups &amp; innovation</div>
                     <div class="h-px w-8 bg-gradient-to-l from-[#C5A26F] to-transparent mt-1 self-end"></div>
                 </div>
                 
                 <!-- Bottom Right - Industriels -->
                 <div class="absolute bottom-[22%] -right-2 flex flex-col items-end z-10">
                     <div class="text-[#E5D5B8] text-[10px] tracking-[2px] font-medium text-right">INDUSTRIELS</div>
-                    <div class="text-[#BFA46F] text-[8px] tracking-widest opacity="70">MedTech</div>
+                    <div class="text-[#BFA46F] text-[8px] tracking-widest opacity-70">MedTech</div>
                     <div class="h-px w-8 bg-gradient-to-l from-[#C5A26F] to-transparent mt-1 self-end"></div>
                 </div>
                 
@@ -453,8 +485,8 @@
                 </div>
                 
                 <p class="max-w-[46ch] mx-auto text-[21px] text-white/75 leading-tight mb-10">
-                    Une expérience rare, pensée pour 100 participants exlusifs<br>
-                    qui façonnent l’avenir de la longévité locomotrice. Une soirée iconique, des projets concrets.
+                    Une expérience rare, pensée pour 100 leaders<br>
+                    qui façonnent l’avenir de la longévité locomotrice.
                 </p>
 
                 <!-- Badge Komo Pulse ajouté -->
@@ -630,9 +662,9 @@
 
     <!-- PROGRAMME + 15 STANDS -->
     <section id="programme" class="max-w-5xl mx-auto px-8 py-24">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
             <div>
-                <div class="uppercase tracking-[3px] text-xs text-[#C5A26F]">25 &amp; 26 SEPTEMBRE 2026</div>
+                <div class="uppercase tracking-[3px] text-xs text-[#C5A26F]">10 &amp; 11 OCTOBRE 2026 • ACADÉMIE NATIONALE DE CHIRURGIE</div>
                 <h2 class="heading-serif text-6xl tracking-tighter">Le programme</h2>
             </div>
             <a href="#inscription" class="mt-6 md:mt-0 text-sm flex items-center gap-x-2 group">
@@ -641,45 +673,204 @@
             </a>
         </div>
 
+        <!-- Intro stratégique -->
+        <div class="max-w-3xl mb-10">
+            <p class="text-[17px] text-white/75 leading-relaxed">
+                Un programme pensé pour <strong class="text-white">100 leaders</strong> : alternance de visions plénières, tables rondes interdisciplinaires, ateliers en petit comité et moments d’innovation. 
+                Chaque demi-journée met en orbite les <strong class="text-[#C5A26F]">5 acteurs</strong> de la longévité locomotrice pour des échanges authentiques et actionnables.
+            </p>
+        </div>
+
         <div class="grid md:grid-cols-2 gap-8">
-            <!-- Jour 1 -->
-            <div class="border border-white/10 rounded-3xl p-9">
+            <!-- JOUR 1 - Optimisé -->
+            <div class="border border-white/10 rounded-3xl p-9 bg-zinc-950/50">
                 <div class="flex items-center justify-between mb-8">
                     <div>
-                        <div class="text-sm text-white/50">VENDREDI 10 OCTOBRE</div>
-                        <div class="text-3xl font-semibold">Journée Scientifique</div>
+                        <div class="text-sm text-white/50 tracking-wider">VENDREDI 10 OCTOBRE</div>
+                        <div class="text-3xl font-semibold tracking-tight">Journée Scientifique &amp; Vision</div>
                     </div>
                     <div class="text-right">
-                        <div class="text-xs px-3 py-1 rounded bg-white/5 inline-block">08h30 → 19h30</div>
+                        <div class="text-xs px-4 py-1.5 rounded-full bg-white/5 inline-block border border-white/10">08h30 → 19h30</div>
                     </div>
                 </div>
-                <div class="space-y-6 text-sm">
-                    <div class="flex gap-4"><div class="w-20 text-white/50 shrink-0">08h30</div><div>Accueil &amp; café de bienvenue</div></div>
-                    <div class="flex gap-4"><div class="w-20 text-white/50 shrink-0">09h15</div><div>Ouverture officielle – Académie Nationale de Chirurgie</div></div>
-                    <div class="flex gap-4"><div class="w-20 text-white/50 shrink-0">09h45</div><div>Keynotes &amp; sessions plénières</div></div>
-                    <div class="flex gap-4"><div class="w-20 text-white/50 shrink-0">12h30</div><div>Ateliers déjeuner thématiques</div></div>
-                    <div class="flex gap-4"><div class="w-20 text-white/50 shrink-0">14h30</div><div>Sessions parallèles &amp; tables rondes</div></div>
-                    <div class="flex gap-4"><div class="w-20 text-white/50 shrink-0">19h30</div><div>Soirée caritative premium (option)</div></div>
+
+                <div class="space-y-5 text-[14.5px]">
+                    <div class="flex gap-5 group">
+                        <div class="w-16 text-[#C5A26F] font-mono shrink-0 pt-0.5">08:30</div>
+                        <div class="flex-1">
+                            <div class="font-medium">Accueil café &amp; networking informel</div>
+                            <div class="text-white/60 text-xs mt-0.5">Mise en relation guidée par les 5 acteurs • Café premium</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-5 group">
+                        <div class="w-16 text-[#C5A26F] font-mono shrink-0 pt-0.5">09:15</div>
+                        <div class="flex-1">
+                            <div class="font-medium">Ouverture officielle</div>
+                            <div class="text-white/60 text-xs mt-0.5">Mot des fondateurs • Représentant de l’Académie Nationale de Chirurgie</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-5 group">
+                        <div class="w-16 text-[#C5A26F] font-mono shrink-0 pt-0.5">09:45</div>
+                        <div class="flex-1">
+                            <div class="font-medium">Plénière d’ouverture — Le Mouvement Perpétuel</div>
+                            <div class="text-white/60 text-xs mt-0.5">5 interventions de 12 min : Sociétés Savantes • Médecins • Patients • Industriels MedTech • Entrepreneurs</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-5 group">
+                        <div class="w-16 text-[#C5A26F] font-mono shrink-0 pt-0.5">11:00</div>
+                        <div class="flex-1">
+                            <div class="font-medium">Pause café premium</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-5 group">
+                        <div class="w-16 text-[#C5A26F] font-mono shrink-0 pt-0.5">11:30</div>
+                        <div class="flex-1">
+                            <div class="font-medium">Table ronde — Prévention &amp; Longévité</div>
+                            <div class="text-white/60 text-xs mt-0.5">Comment transformer la marche en soin de première ligne ? Regards croisés des 5 acteurs</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-5 group">
+                        <div class="w-16 text-[#C5A26F] font-mono shrink-0 pt-0.5">12:45</div>
+                        <div class="flex-1">
+                            <div class="font-medium">Déjeuner thématique structuré</div>
+                            <div class="text-white/60 text-xs mt-0.5">Tables mixtes de 8-10 personnes (thématiques : marche &amp; prévention, Komo Pulse, innovation MedTech, patient empowerment…)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-5 group">
+                        <div class="w-16 text-[#C5A26F] font-mono shrink-0 pt-0.5">14:15</div>
+                        <div class="flex-1">
+                            <div class="font-medium">Ateliers parallèles (3 au choix)</div>
+                            <div class="text-white/60 text-xs mt-0.5">1. Analyse quantifiée de la marche &amp; technologies • 2. Intégration prévention dans les parcours • 3. Co-création avec les patients</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-5 group">
+                        <div class="w-16 text-[#C5A26F] font-mono shrink-0 pt-0.5">15:45</div>
+                        <div class="flex-1">
+                            <div class="font-medium">Pause &amp; visite libre des 15 stands d’innovation</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-5 group">
+                        <div class="w-16 text-[#C5A26F] font-mono shrink-0 pt-0.5">16:15</div>
+                        <div class="flex-1">
+                            <div class="font-medium">Session « Regards croisés » — Freins &amp; leviers systémiques</div>
+                            <div class="text-white/60 text-xs mt-0.5">Débat ouvert entre les 5 acteurs sur les blocages et les solutions concrètes</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-5 group">
+                        <div class="w-16 text-[#C5A26F] font-mono shrink-0 pt-0.5">17:30</div>
+                        <div class="flex-1">
+                            <div class="font-medium">Découverte guidée des stands + échanges exposants</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-5 group pt-2 border-t border-white/10">
+                        <div class="w-16 text-[#C5A26F] font-mono shrink-0 pt-0.5">19:30</div>
+                        <div class="flex-1">
+                            <div class="font-medium text-[#C5A26F]">Surprise exclusive réservée aux 100 participants</div>
+                            <div class="text-white/60 text-xs mt-0.5">Un moment inattendu, sensoriel ou relationnel qui incarne l’esprit du L² Summit</div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Jour 2 -->
-            <div class="border border-white/10 rounded-3xl p-9">
+            <!-- JOUR 2 - Optimisé -->
+            <div class="border border-white/10 rounded-3xl p-9 bg-zinc-950/50">
                 <div class="flex items-center justify-between mb-8">
                     <div>
-                        <div class="text-sm text-white/50">SAMEDI 11 OCTOBRE</div>
-                        <div class="text-3xl font-semibold">Masterclasses &amp; Innovation</div>
+                        <div class="text-sm text-white/50 tracking-wider">SAMEDI 11 OCTOBRE</div>
+                        <div class="text-3xl font-semibold tracking-tight">Masterclasses, Innovation &amp; Co-construction</div>
                     </div>
                     <div class="text-right">
-                        <div class="text-xs px-3 py-1 rounded bg-white/5 inline-block">08h30 → 18h00</div>
+                        <div class="text-xs px-4 py-1.5 rounded-full bg-white/5 inline-block border border-white/10">08h30 → 18h00</div>
                     </div>
                 </div>
-                <div class="space-y-6 text-sm">
-                    <div class="flex gap-4"><div class="w-20 text-white/50 shrink-0">08h30</div><div>Masterclasses interactives</div></div>
-                    <div class="flex gap-4"><div class="w-20 text-white/50 shrink-0">11h00</div><div>Table ronde institutionnelle</div></div>
-                    <div class="flex gap-4"><div class="w-20 text-white/50 shrink-0">14h00</div><div>LocoTech Innovation Trophy</div></div>
-                    <div class="flex gap-4"><div class="w-20 text-white/50 shrink-0">16h00</div><div>Networking final &amp; clôture</div></div>
+
+                <div class="space-y-5 text-[14.5px]">
+                    <div class="flex gap-5 group">
+                        <div class="w-16 text-[#C5A26F] font-mono shrink-0 pt-0.5">08:30</div>
+                        <div class="flex-1">
+                            <div class="font-medium">Café &amp; débrief informel de la veille</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-5 group">
+                        <div class="w-16 text-[#C5A26F] font-mono shrink-0 pt-0.5">09:00</div>
+                        <div class="flex-1">
+                            <div class="font-medium">Masterclass 1 — La marche comme biomarqueur de longévité</div>
+                            <div class="text-white/60 text-xs mt-0.5">Format interactif + démonstration live Komo Pulse (Dr Renan Chapon)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-5 group">
+                        <div class="w-16 text-[#C5A26F] font-mono shrink-0 pt-0.5">10:30</div>
+                        <div class="flex-1">
+                            <div class="font-medium">Pause café</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-5 group">
+                        <div class="w-16 text-[#C5A26F] font-mono shrink-0 pt-0.5">11:00</div>
+                        <div class="flex-1">
+                            <div class="font-medium">Table ronde institutionnelle</div>
+                            <div class="text-white/60 text-xs mt-0.5">Politiques publiques, innovation &amp; longévité locomotrice (Ministère, HAS, sociétés savantes)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-5 group">
+                        <div class="w-16 text-[#C5A26F] font-mono shrink-0 pt-0.5">12:30</div>
+                        <div class="flex-1">
+                            <div class="font-medium">Déjeuner networking libre + stands ouverts</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-5 group pt-2 border-t border-white/10">
+                        <div class="w-16 text-[#C5A26F] font-mono shrink-0 pt-0.5">14:00</div>
+                        <div class="flex-1">
+                            <div class="font-medium text-[#C5A26F]">LocoTech Innovation Trophy</div>
+                            <div class="text-white/60 text-xs mt-0.5">Pitch des startups MedTech sélectionnées • Jury d’experts + vote live des 100 participants</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-5 group">
+                        <div class="w-16 text-[#C5A26F] font-mono shrink-0 pt-0.5">15:30</div>
+                        <div class="flex-1">
+                            <div class="font-medium">Workshop de co-construction</div>
+                            <div class="text-white/60 text-xs mt-0.5">« Feuille de route 2027-2030 pour la longévité locomotrice en France » — Groupes mixtes des 5 acteurs → restitution collective</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-5 group">
+                        <div class="w-16 text-[#C5A26F] font-mono shrink-0 pt-0.5">16:30</div>
+                        <div class="flex-1">
+                            <div class="font-medium">Synthèse &amp; recommandations du congrès</div>
+                            <div class="text-white/60 text-xs mt-0.5">Actions concrètes identifiées • Annonce des prochaines initiatives Locotech Lab</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-5 group pt-2 border-t border-white/10">
+                        <div class="w-16 text-[#C5A26F] font-mono shrink-0 pt-0.5">17:15</div>
+                        <div class="flex-1">
+                            <div class="font-medium">Clôture officielle</div>
+                            <div class="text-white/60 text-xs mt-0.5">Remerciements • Activation Komo Pulse pour tous les participants • Mot de la surprise finale</div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
+        
+        <div class="mt-8 text-center">
+            <div class="inline-flex items-center gap-x-2 text-xs tracking-[2px] text-white/40 border border-white/10 px-5 py-2 rounded-full">
+                <i class="fa-solid fa-info-circle"></i>
+                <span>Programme susceptible d’évoluer légèrement • Version définitive envoyée aux participants 3 semaines avant</span>
             </div>
         </div>
 
@@ -794,6 +985,10 @@
                     <i class="fa-solid fa-heart-pulse"></i>
                     <span>Komo Pulse</span>
                 </button>
+                <a href="backoffice.html" class="hidden-access flex items-center gap-x-1.5 hover:text-[#C5A26F] text-[10px] opacity-60 hover:opacity-100 transition-all">
+                    <i class="fa-solid fa-lock mr-1"></i>
+                    <span>Medtech code 2026</span>
+                </a>
             </div>
         </div>
     </footer>
@@ -899,22 +1094,6 @@
             });
         }
 
-        function initPlacesCounter() {
-            const el = document.getElementById('places-left');
-            if (!el) return;
-            
-            let current = 87;
-            el.textContent = current;
-            
-            setInterval(() => {
-                if (current > 72 && Math.random() > 0.7) {
-                    current--;
-                    el.style.transition = 'all 0.6s cubic-bezier(0.23,1,0.32,1)';
-                    el.textContent = current;
-                }
-            }, 45000);
-        }
-
         function createStarryBackground() {
             const container = document.getElementById('stars-bg');
             if (!container) return;
@@ -945,15 +1124,61 @@
             }
         }
 
+        /* ============================================
+           MOBILE MENU - Ultra Premium Experience
+           ============================================ */
+        function initMobileMenu() {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            if (!btn || !menu) return;
+
+            let isOpen = false;
+
+            function toggleMenu() {
+                isOpen = !isOpen;
+                const icon = btn.querySelector('i');
+
+                if (isOpen) {
+                    menu.classList.remove('hidden');
+                    menu.classList.add('flex');
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    menu.classList.add('hidden');
+                    menu.classList.remove('flex');
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                    document.body.style.overflow = '';
+                }
+            }
+
+            btn.addEventListener('click', toggleMenu);
+
+            // Close menu when clicking any link inside
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (isOpen) toggleMenu();
+                });
+            });
+
+            // Close on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && isOpen) {
+                    toggleMenu();
+                }
+            });
+        }
+
         function init() {
             initializeTailwind();
             initNavbar();
             initSmoothScroll();
             initKeyboardControls();
-            initPlacesCounter();
             createStarryBackground();
+            initMobileMenu();
             
-            console.log('%c[L² Summit 2026] Version mise à jour avec HelloAsso + Komo Pulse.', 'color:#C5A26F');
+            console.log('%c[L² Summit 2026] Version ultra-pro améliorée • Mobile + Cohérence dates + HTML valide', 'color:#C5A26F');
         }
 
         window.onload = init;
